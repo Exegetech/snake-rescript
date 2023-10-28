@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake ReScript</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        background: #343b4b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      canvas {
+        border: 1px solid white;
+        backgroud: #252932;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas 
+      width="400"
+      height="400"
+      id="game-board"
+    ></canvas>
+  </body>
+  <script>
+    new EventSource('/esbuild').addEventListener('change', () => {
+      location.reload()
+    })
+  </script>
+  <script src="js/App.bs.js"></script>
+</html>
