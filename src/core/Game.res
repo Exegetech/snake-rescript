@@ -2,7 +2,7 @@ let make = (board, snakeRef, foodRef) => {
   let countRef = ref(0)
 
   let rec loop = () => {
-    MyWindow.requestAnimationFrame(loop)
+    Bindings.requestAnimationFrame(loop)
 
     let count = countRef.contents
     let snake = snakeRef.contents

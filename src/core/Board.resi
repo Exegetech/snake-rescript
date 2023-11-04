@@ -1,4 +1,4 @@
-module Canvas = MyDocument.Canvas
+module Canvas = Bindings.Canvas
 
 type t
 

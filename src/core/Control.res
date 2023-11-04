@@ -1,8 +1,8 @@
 let changeDirection = (snakeRef, event) => {
-  open MyDocument.Event
+  open Bindings
 
   let snake: Snake.t = snakeRef.contents
-  let data = (event.which, Snake.getDx(snake), Snake.getDy(snake))
+  let data = (event.Event.which, Snake.getDx(snake), Snake.getDy(snake))
 
   switch data {
     | (Left, 0, _) => snakeRef := Snake.setSpeedLeft(snake)
@@ -15,7 +15,7 @@ let changeDirection = (snakeRef, event) => {
 
 let makeControl = (snakeRef) => {
   () => {
-    MyDocument.addEventListener(MyDocument.KeyDown, (event) => {
+    Bindings.addEventListener(Bindings.KeyDown, (event) => {
       changeDirection(snakeRef, event)
     })
   }

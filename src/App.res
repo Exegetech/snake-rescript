@@ -1,7 +1,7 @@
 let snakeRef = ref(Snake.make())
 let foodRef = ref(Food.make())
 
-let canvas = MyDocument.getElementById(Settings.boardId)
+let canvas = Bindings.getElementById(Settings.boardId)
 
 switch canvas {
   | Null => Console.log(`Cannot find element with id ${Settings.boardId}`)

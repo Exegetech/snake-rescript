@@ -1,3 +1,10 @@
+module Null = {
+  @unboxed
+  type t<'a> =
+    | Present('a)
+    | @as(null) Null
+}
+
 module Canvas = {
   module Context = {
     type t
@@ -24,10 +31,6 @@ module Canvas = {
   external getContext: (t, context) => Context.t = "getContext"
 }
 
-@val
-@scope(("document"))
-external getElementById: (string) => MyNull.t<Canvas.t> = "getElementById"
-
 module Event = {
   type arrowKey =
     | @as(37) Left
@@ -45,4 +48,12 @@ type eventType =
 
 @val
 @scope(("document"))
+external getElementById: (string) => Null.t<Canvas.t> = "getElementById"
+
+@val
+@scope(("document"))
 external addEventListener: (eventType, (Event.t) => ()) => () = "addEventListener"
+
+@val
+@scope(("window"))
+external requestAnimationFrame: (() => ()) => () = "requestAnimationFrame"
