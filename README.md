@@ -1,21 +1,19 @@
-# ReScript Project Template
+# Snake ReScript
 
-The only official ReScript starter template.
+A simple snake game in ReScript
 
 ## Installation
 
 ```sh
-npm install
+pnpm install
 ```
 
-## Build
-
-- Build: `npm run res:build`
-- Clean: `npm run res:clean`
-- Build & watch: `npm run res:dev`
-
-## Run
+## Start
 
 ```sh
-node src/Demo.bs.js
+pnpm run res:build
+pnpm run serve
 ```
+
+Open your `http://localhost:8000`
+
